@@ -1,11 +1,11 @@
-# utslabpemob
+# UTS LAB PM 2
 Muhammad Thomi Dzakwan Nasution 231401124 Lab 2  
 
 Nama Aplikasi: Quiz DZ  
 
 Deskripsi: aplikasi kuis yang berisikan 5 pertanyaan  
 
-Sumber aset:
+Sumber aset:  
 -Font Poppins  
 
 Screenshot:  
