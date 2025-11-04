@@ -6,7 +6,9 @@ Nama Aplikasi: Quiz DZ
 Deskripsi: aplikasi kuis yang berisikan 5 pertanyaan  
 
 Sumber aset:
--Font Poppins
+-Font Poppins  
+
+Screenshot:  
 <img width="289" height="632" alt="image" src="https://github.com/user-attachments/assets/36b9e02f-941b-4080-97e6-e20cb4009a20" />
 <img width="301" height="628" alt="image" src="https://github.com/user-attachments/assets/cc141726-64da-4e31-a708-cd35d8f341b7" />
 <img width="283" height="618" alt="image" src="https://github.com/user-attachments/assets/9b3808c7-f5e4-48b6-a85d-567e5dcef2fe" />
