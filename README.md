@@ -1,7 +1,10 @@
 # utslabpemob
-Muhammad Thomi Dzakwan Nasution 231401124 Lab 2
-Nama Aplikasi: Quiz DZ
-Deskripsi: aplikasi kuis yang berisikan 5 pertanyaan
+Muhammad Thomi Dzakwan Nasution 231401124 Lab 2  
+
+Nama Aplikasi: Quiz DZ  
+
+Deskripsi: aplikasi kuis yang berisikan 5 pertanyaan  
+
 Sumber aset:
 -Font Poppins
 <img width="289" height="632" alt="image" src="https://github.com/user-attachments/assets/36b9e02f-941b-4080-97e6-e20cb4009a20" />
