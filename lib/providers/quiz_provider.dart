@@ -8,7 +8,6 @@ class QuizProvider extends ChangeNotifier {
   bool _isDarkMode = false;
 
   QuizProvider() {
-    // Pindahkan inisialisasi ke sini, aman untuk load quizQuestions
     _userAnswers = List.filled(quizQuestions.length, null);
   }
 
