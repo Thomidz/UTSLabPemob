@@ -10,6 +10,22 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          // Gunakan Consumer agar AppBar ikut rebuild ketika mode berubah
+          Consumer<QuizProvider>(
+            builder: (context, quizProvider, _) => IconButton(
+              icon: Icon(
+                quizProvider.isDarkMode ? Icons.light_mode : Icons.dark_mode,
+              ),
+              tooltip: quizProvider.isDarkMode
+                  ? 'Ubah ke Light Mode'
+                  : 'Ubah ke Dark Mode',
+              onPressed: () => quizProvider.toggleTheme(),
+            ),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -22,7 +38,7 @@ class WelcomeScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
-                  fontFamily: 'Poppins',
+                  fontFamily: 'Quicksand',
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -40,7 +56,9 @@ class WelcomeScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   if (_nameController.text.trim().isNotEmpty) {
-                    context.read<QuizProvider>().setUserName(_nameController.text.trim());
+                    context
+                        .read<QuizProvider>()
+                        .setUserName(_nameController.text.trim());
                     Navigator.pushReplacementNamed(context, '/quiz');
                   }
                 },

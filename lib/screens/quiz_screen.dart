@@ -21,7 +21,8 @@ class QuizScreen extends StatelessWidget {
           TextButton(
             onPressed: () {
               // Reset data kuis melalui provider
-              final quizProvider = Provider.of<QuizProvider>(context, listen: false);
+              final quizProvider =
+              Provider.of<QuizProvider>(context, listen: false);
               quizProvider.resetQuiz();
 
               Navigator.pop(context); // Tutup dialog
@@ -46,6 +47,18 @@ class QuizScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Hai, ${quizProvider.userName}'),
         actions: [
+          // Tombol toggle dark/light mode
+          IconButton(
+            icon: Icon(
+              quizProvider.isDarkMode ? Icons.light_mode : Icons.dark_mode,
+            ),
+            tooltip: quizProvider.isDarkMode
+                ? 'Ubah ke Light Mode'
+                : 'Ubah ke Dark Mode',
+            onPressed: () => quizProvider.toggleTheme(),
+          ),
+
+          // Tombol keluar kuis
           IconButton(
             icon: const Icon(Icons.exit_to_app),
             tooltip: 'Keluar',
@@ -56,7 +69,8 @@ class QuizScreen extends StatelessWidget {
       body: Center(
         child: quizProvider.currentQuestionIndex < quizProvider.questions.length
             ? QuizQuestion(
-          question: quizProvider.questions[quizProvider.currentQuestionIndex],
+          question: quizProvider
+              .questions[quizProvider.currentQuestionIndex],
         )
             : const Text('Tidak ada pertanyaan.'),
       ),
