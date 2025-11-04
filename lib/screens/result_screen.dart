@@ -12,24 +12,37 @@ class ResultScreen extends StatelessWidget {
     final score = quizProvider.score;
     final total = quizQuestions.length;
     final percentage = (score / total) * 100;
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            icon: Icon(
+              quizProvider.isDarkMode ? Icons.light_mode : Icons.dark_mode,
+            ),
+            tooltip: quizProvider.isDarkMode
+                ? 'Ubah ke Light Mode'
+                : 'Ubah ke Dark Mode',
+            onPressed: () => quizProvider.toggleTheme(),
+          ),
+        ],
+      ),
       body: SafeArea(
-        child: Center( // ✅ seluruh konten ditengah layar
+        child: Center(
           child: Padding(
             padding: const EdgeInsets.all(24.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center, // ✅ vertikal tengah
-              crossAxisAlignment: CrossAxisAlignment.center, // ✅ horizontal tengah
-              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Selamat ${quizProvider.userName}!',
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontSize: 24,
+                  style: TextStyle(
+                    fontSize: 26,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Poppins',
+                    color: isDarkMode ? Colors.white : Colors.black,
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -38,8 +51,8 @@ class ResultScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20,
-                    color: Theme.of(context).textTheme.bodyLarge?.color,
                     fontFamily: 'Poppins',
+                    color: isDarkMode ? Colors.white70 : Colors.black87,
                   ),
                 ),
                 const SizedBox(height: 10),
@@ -49,8 +62,8 @@ class ResultScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 48,
                     fontWeight: FontWeight.bold,
-                    color: Theme.of(context).primaryColor,
                     fontFamily: 'Poppins',
+                    color: isDarkMode ? Colors.amberAccent : Colors.blueAccent,
                   ),
                 ),
                 Text(
@@ -58,11 +71,13 @@ class ResultScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 24,
-                    color: Theme.of(context).primaryColor,
                     fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w600,
+                    color: isDarkMode ? Colors.amberAccent : Colors.blueAccent,
                   ),
                 ),
                 const SizedBox(height: 40),
+                // 🔹 Tidak diubah sama sekali (sesuai permintaan)
                 ElevatedButton(
                   onPressed: () {
                     quizProvider.resetQuiz();

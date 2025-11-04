@@ -38,7 +38,7 @@ class WelcomeScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
-                  fontFamily: 'Quicksand',
+                  fontFamily: 'Poppins',
                 ),
                 textAlign: TextAlign.center,
               ),
