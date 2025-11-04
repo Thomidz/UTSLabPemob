@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       child: Consumer<QuizProvider>(
         builder: (context, quizProvider, child) {
           return MaterialApp(
-            debugShowCheckedModeBanner: false, // 🔹 HILANGKAN TULISAN "DEBUG" & watermark
+            debugShowCheckedModeBanner: false,
             title: 'Quiz App',
             theme: ThemeData(
               colorScheme: ColorScheme.fromSeed(
